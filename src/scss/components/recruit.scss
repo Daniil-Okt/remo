@@ -1,0 +1,111 @@
+.recruit {
+    padding: rem(78) 0;
+    background-color: $blueColor;
+    @media(max-width:1200px){
+        padding: rem(37) 0;
+    }
+    @media(max-width:560px){
+        padding: rem(20) 0;
+    }
+    
+    &__container {
+    }
+
+    &__row {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__rewiews {
+        
+    }
+
+    &__ment {
+    }
+}
+.rewiews-recruit {
+    padding-right: rem(18);
+    @media(max-width:900px){
+        padding-right: rem(12.3);
+    }
+    border-right: 2px solid $whiteColor;
+    &__text-up {
+        color: $whiteColor;
+        text-transform: uppercase;
+        font-size: rem(25);
+        @include adaptiveClamp(margin-bottom, 12, 9);
+        @media(max-width:1200px){
+            @include adaptiveClamp(font-size, 22, 13);
+        }
+    }
+
+    &__logo {
+        display: flex;
+        @include adaptiveClamp(gap, 11, 7.5);
+    }
+
+    &__img-logo {
+        max-width: rem(202);
+        width: 100%;
+        @media(max-width:1000px){
+            @include adaptiveClamp(max-width, 193, 118);
+
+        }
+    }
+
+    &__row {
+        
+    }
+
+    &__rec {
+    }
+
+    &__row-star {
+        margin: auto 0;
+        padding: 0 rem(2);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__star {
+        max-width: rem(18.3);
+        width: 100%;
+        @media(max-width:580px){
+            max-width: rem(12.5);
+        }
+    }
+
+    &__text {
+        font-size: rem(25);
+        @include adaptiveClamp(font-size, 25, 16);
+        margin-top: rem(6);
+        color: $whiteColor;
+        @media(max-width:580px){
+            margin-top: rem(4);
+        }
+    }
+}
+.ment-recruit {
+    display: flex;
+    align-items: center;
+    padding-left: rem(18);
+    @media(max-width:900px){
+        padding-left: rem(12.3);
+    }
+    &__text {
+        p.up {
+            text-transform: uppercase;
+            margin-bottom: rem(6);
+        }
+        p {
+            color: $whiteColor;
+            font-size: rem(25);
+            @media(max-width:1200px){
+                @include adaptiveClamp(font-size, 22, 13);
+            }
+        }
+        
+    }
+}
+.up {
+}

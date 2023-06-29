@@ -1,0 +1,123 @@
+.companies {
+    padding: rem(40) 0;
+    &__container {
+        overflow: hidden;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: rem(24);
+        p {
+            font-size: rem(25);
+            @media(max-width:900px){
+                @include adaptiveClamp(font-size, 25, 16);
+            }
+        }
+    }
+
+    &__text {
+    }
+
+    &__paginator {
+        position: relative;
+        
+    }
+    .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+        transform: translateX(0%);
+        @media(max-width:560px){
+            display: none;
+        }
+    }
+    &__swiper {
+        
+    }
+    &__line {
+        @media(max-width:767px){
+            width: 100%;
+            height: rem(2);
+            background-color: $blackColor;
+            margin: rem(15) 0;
+        }
+    }
+    &__swiper2 {
+        @media(min-width:767px){
+            display: none;
+        }
+    }
+    &__swiper, &__swiper2 {
+        position: relative;
+        overflow: hidden;
+        margin: 0 rem(-28) 0 rem(-28);
+        &::before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 100%;
+            background: $whiteColor;
+            top:0;
+            left: -5px;
+            z-index: 2;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 100%;
+            background: $whiteColor;
+            top: 0;
+            right: -5px;
+            z-index: 2;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        // flex-wrap: wrap;
+        min-height: 100%;
+    }
+    &__slide {
+        display: flex;
+        min-height: 100%;
+        height: 100%;
+        @media(max-width:767px){
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+    &__slide-none {
+        @media(max-width:767px){
+            display: none;
+        }
+    }
+    &__item {
+        @include adaptiveClamp(padding-left, 28, 20);
+        @include adaptiveClamp(padding-right, 28, 20);
+        position: relative;
+        align-items: center;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 2px;
+            @include adaptiveClamp(height, 75, 52);
+            background: $blackColor;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            z-index: -1;
+        }
+    }
+
+
+    &__img {
+        width: 100%;
+    }
+}
+.paginator {
+}
+.swiper-wrapper {
+}
+.swiper-slider {
+}

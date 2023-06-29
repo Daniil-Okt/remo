@@ -1,0 +1,103 @@
+.about {
+    position: relative;
+    padding-top: rem(127);
+    padding-bottom: rem(114);
+    @media(max-width:1400px){
+        padding-top: rem(42);
+        padding-bottom: rem(60);
+    }
+    @media(max-width:560px){
+        padding-bottom: rem(40);
+    }
+    &__container {
+        
+        
+    }
+
+    &__body {
+        max-width: rem(782);
+    }
+
+    &__title {
+        margin-bottom: rem(24);
+        @include adaptiveClamp(max-width, 752, 370);
+        @media(max-width:1200px){
+            @include adaptiveClamp(max-width, 650, 370);
+        }
+        @media(max-width:900px){
+            @include adaptiveClamp(margin-bottom, 24, 16);
+        }
+        @media(max-width: 640px){
+            max-width: rem(370);
+        }
+    }
+
+    &__text {
+        margin-bottom: rem(62);
+        p {
+            @include adaptiveClamp(font-size, 25, 13);
+        }
+        @include adaptiveClamp(max-width, 710, 178);
+        @media(max-width:1200px){
+            @include adaptiveClamp(margin-bottom, 51, 16);
+            @include adaptiveClamp(max-width, 695, 178);
+            
+        }
+    }
+
+    &__button-row {
+        display: flex;
+        gap: rem(32);
+    }
+
+    &__button {
+    }
+
+    &__img {
+        max-width: rem(683);
+        
+        position: absolute;
+        right: 0;
+        bottom: rem(-7);
+        @media(max-width:1750px){
+            max-width: rem(603);
+        }
+        @media(max-width:1400px){
+            max-width: rem(500);
+        }
+        @media(max-width:1240px){
+            // max-width: rem(450);
+        }
+        @media(max-width:1100px){
+            max-width: rem(402);
+        };
+        @media(max-width:920px){
+            max-width: rem(300);
+            bottom: rem(54);
+        }
+        @media(max-width:790px){
+            max-width: rem(240);
+            bottom: rem(54);
+        }
+        @media(max-width:725px){
+            max-width: rem(201);
+        }
+        @media(max-width:640px){
+            max-width: rem(201);
+            bottom: rem(114);
+        }
+        @media(max-width:520px){
+            bottom: rem(94);
+        }
+        @media(max-width:433px){
+            bottom: rem(104);
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+.button {
+}
+.transp {
+}

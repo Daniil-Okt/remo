@@ -1,0 +1,166 @@
+// =====================================================================================================================
+.header {
+  top: 0;
+  position: sticky;
+  background-color: $whiteColor;
+  width: 100%;
+  background-color: $whiteColor;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+  &.sticky {
+    // ..стили для липкого хедера
+  }
+
+  // .header__container
+  &__container {
+    position: relative;
+    height: rem($headerHeight);
+    @include adaptiveClamp(height, 97, 43);
+    display: flex;
+    align-items: center;
+    
+  }
+
+  &__logo {
+    font-family: 'Inter';
+    font-size: rem(25);
+    position: relative;
+    z-index: 5;
+    @media(max-width:1050px){
+      @include adaptiveClamp(font-size, 24.5, 20);
+    }
+  }
+
+  &__menu {
+  }
+}
+.logo {
+}
+.menu {
+  margin-left: auto;
+  @media(max-width:767px){
+      position: fixed;
+      width: 100%;
+      left: -100%;
+      top: 0;
+      background-color: $whiteColor;
+      padding: rem(80) rem(26) rem(26)  rem(26);
+      z-index: 4;
+      transition: $standartTrans;
+  }
+  @media(max-width:560px){
+    padding: rem(60) rem(19) rem(19)  rem(19);
+  }
+  .menu-open & {
+    left: 0;
+  }
+  &__list {
+    display: flex;
+    gap: rem(46);
+    @media(max-width:960px){
+        gap: rem(24);
+    }
+    @media(max-width:767px){
+        flex-direction: column;
+    }
+  }
+
+  &__item {
+    position: relative;
+    @include adaptiveClamp(height, 97, 43);
+    display: flex;
+    align-items: center;
+    @media(max-width:767px){
+        height: 100%;
+    }
+  }
+
+  &__link {
+    font-size: rem(25);
+    transition: all 0.5s ease  0s;
+    @media(max-width:1100px){
+        font-size: rem(20);
+    }
+    @media(max-width:767px){
+        // font-size: rem(25);
+    }
+    &:hover {
+      color: #2979FF;
+    }
+    &::before {
+      @media(min-width: 767px){
+        position: absolute;
+        content: '';
+        width: 110%;
+        height: 2px;
+        background: #2979FF;
+        bottom: rem(10);
+        left: -5%;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s ease  0s;
+      }
+    }
+    &:hover::before {
+      transform-origin: left;
+        transform: scaleX(1);
+    }
+  }
+}
+
+// =====================================================================================================================
+
+// Burger
+.icon-menu {
+  display: none;
+  @include media(767) {
+    display: block;
+    position: relative;
+    width: rem(30);
+    height: rem(18);
+    margin-right: rem(14);
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 5;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 300ms ease 0ms;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: #000;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - rem(1));
+    }
+
+    .menu-open & {
+      span {
+        width: 0;
+      }
+
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
